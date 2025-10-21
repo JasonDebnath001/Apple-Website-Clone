@@ -57,7 +57,7 @@ Want to play around with the code? Here's how you can get it running locally:
 
 1.  **Clone this repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/JasonDebnath001/Apple-Website-Clone
     ```
 2.  **Jump into the project directory:**
     ```bash
