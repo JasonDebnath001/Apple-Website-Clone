@@ -1,54 +1,62 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import React from 'react'
-import { useMediaQuery } from 'react-responsive'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 const Highlights = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1024px)' })
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
 
-  useGSAP(()=>{
-    gsap.to(['.left-column', '.right-column'], {
+  useGSAP(() => {
+    gsap.to([".left-column", ".right-column"], {
       scrollTrigger: {
-        trigger: '#highlights',
-        start: isMobile ? 'bottom bottom' : 'top top',
+        trigger: "#highlights",
+        start: isMobile ? "bottom bottom" : "top top",
       },
-      y:0,
+      y: 0,
       opacity: 1,
       stagger: 0.5,
       duration: 1,
-      ease: 'power1.inOut'
-    })
-  },[isMobile])
+      ease: "power1.inOut",
+    });
+  }, [isMobile]);
 
   return (
-    <section id='highlights'>
+    <section id="highlights">
       <h2>There's Never Been A Better Time To Upgrade</h2>
       <h3>Here's What You Get With The New Macbook Pro.</h3>
 
-      <div className='masonry'>
-        <div className='left-column'>
+      <div className="masonry">
+        <div className="left-column">
           <div>
             <img src="/laptop.png" alt="Laptop" />
             <p>Fly through demanding tasks with 9.5X faster.</p>
           </div>
           <div>
             <img src="/sun.png" alt="Sun" />
-            <p>A stunning <br /> Liquid HDR <br /> Display</p>
+            <p>
+              A stunning <br /> Liquid HDR <br /> Display
+            </p>
           </div>
         </div>
-        <div className='right-column'>
-          <div className='apple-gradient'>
+        <div className="right-column">
+          <div className="apple-gradient">
             <img src="/ai.png" alt="AI" />
-            <p>Built for Apple <span>intelligence.</span></p>
+            <p>
+              Built for Apple <span>intelligence.</span>
+            </p>
           </div>
           <div>
             <img src="/battery.png" alt="Battery" />
-            <p>Up to <span className='green-gradient'>14 more hours</span> battery life. <span className='text-dark-100'>(Up to 24 hours total.)</span></p>
+            <p>
+              Up to <span className="green-gradient">14 more hours</span>{" "}
+              battery life.{" "}
+              <span className="text-dark-100">(Up to 24 hours total.)</span>
+            </p>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Highlights
+export default Highlights;
